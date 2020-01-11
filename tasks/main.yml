@@ -1,0 +1,11 @@
+---
+# tasks file for jenkins_installation
+
+- name: Adding repository
+  shell: sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+
+- name: Adding Jenkins key
+  shell: sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+
+- name: Install Jenkins
+  shell: sudo yum install jenkins
